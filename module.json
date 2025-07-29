@@ -1,0 +1,34 @@
+{
+  "id": "nameplate-ruler-hud-scaling",
+  "title": "Nameplate Ruler Scaling",
+  "description": "<p>A module for FoundryVTT which allows you to scale nameplates and the drag ruler</p>",
+  "authors": [
+    {
+      "name": "Pfodge",
+      "url": "https://github.com/Pfodge",
+      "flags": {}
+    },
+    {
+      "name": "earlSt1",
+      "url": "https://github.com/earlSt1",
+      "flags": {}
+    }
+  ],
+  "version": "1.0",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13"
+  },
+  "esmodules": [
+    "nameplate-ruler-hud-scaling.js"
+  ],
+  "styles": [
+	"ruler_scaling.css"
+  ],
+  "url": "https://github.com/Pfodge/nameplate-ruler-scaling/",
+  "manifest": "https://github.com/Pfodge/nameplate-ruler-scaling/raw/main/module.json", 
+  "download": "https://github.com/Pfodge/nameplate-ruler-scaling/archive/refs/heads/main.zip",
+  "license": "https://github.com/Pfodge/nameplate-ruler-scaling/blob/main/LICENSE",
+  "readme": "https://github.com/Pfodge/nameplate-ruler-scaling/blob/main/README.md",
+  "bugs": "https://github.com/Pfodge/nameplate-ruler-scaling/issues"
+}

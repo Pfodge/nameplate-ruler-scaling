@@ -1,0 +1,20 @@
+#measurement .waypoint-label .img 
+{
+	width: 60px;
+	height: 60px;
+}
+#measurement .waypoint-label .total-measurement,
+#measurement .waypoint-label .total-elevation 
+{
+	font-size: 100px;
+}
+#measurement .waypoint-label .delta-measurement,
+#measurement .waypoint-label .delta-elevation 
+{
+    font-size: 100px;
+}
+
+#measurement .waypoint-label
+{
+	transform: scale(var(--ui-scale)) translate(var(--transformX), var(--transformY));
+}

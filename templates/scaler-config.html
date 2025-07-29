@@ -1,0 +1,73 @@
+<div class="standard-form" id="scaler-config" autocomplete="off" onsubmit="event.preventDefault();">
+    <div class='form-group'>
+        <p id='scaler-error' style='display:none;color:red'>Font size invalid. Must be between 5 and 72</p>
+    </div>
+    <script>
+        document.querySelector('#custom-scalers-edit').style.maxHeight="560px";
+        
+        document.querySelector("input[name='globalFontSize']").addEventListener('change',(event) => {
+            if (event.srcElement.value > 5 && event.srcElement.value < 72){
+                document.querySelector("#scaler-error").style.display='none'
+            }else{
+                document.querySelector("#scaler-error").style.display=''
+            }
+        })
+        document.querySelector("input[name='localFontSize']").addEventListener('change',(event) => {
+            if (event.srcElement.value > 5 && event.srcElement.value < 72){
+                document.querySelector("#scaler-error").style.display='none'
+            }else{
+                document.querySelector("#scaler-error").style.display=''
+            }
+        })
+
+        
+        document.querySelector('#localConfigEnabled').addEventListener('change',function(e){
+            if (e.target.checked){
+                for (element of document.querySelector('#localConfigSettings').querySelectorAll('input,select')){
+                    element.disabled=false;
+                }
+            }else{
+                for (element of document.querySelector('#localConfigSettings').querySelectorAll('input,select')){
+                    element.disabled=true;
+                }
+            }
+        })
+    </script>
+    <h2>Global</h3>
+    <div class="form-group">
+        <label for="globalAutoScaleFont">Auto Scale Font</label>
+        <div class="flexrow">
+            <input type="checkbox" name="globalAutoScaleFont" id='globalAutoScaleFont' {{#if globalSettings.autoScale}}checked{{/if}}/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="globalFontSize">Font Size</label>
+        <div class="flexrow">
+            <input type="number" name="globalFontSize" value="{{globalSettings.fontSize}}" data-dtype="Integer" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="localConfig">Scene specific config</label>
+        <div class="flexrow">
+            <input type="checkbox" name="localConfig" id='localConfigEnabled' {{#if hasLocalSettings}}checked{{/if}}/>
+        </div>
+    </div>
+    <div id="localConfigSettings">
+        <h2>Local</h2>
+    <div class="form-group">
+        <label for="localAutoScaleFont">Auto Scale Font</label>
+        <div class="flexrow">
+            <input type="checkbox" name="localAutoScaleFont" id='localAutoScaleFont' {{#unless hasLocalSettings}}disabled{{/unless}} {{#if localSettings.autoScale}}checked{{/if}}/>
+        </div>
+    </div>
+        <div class="form-group">
+            <label for="localFontSize">Font Size</label>
+            <div class="flexrow">
+                <input type="number" name="localFontSize" value="{{localSettings.fontSize}}" data-dtype="Integer" {{#unless hasLocalSettings}}disabled{{/unless}}/>
+            </div>
+        </div>
+        <!-- <div class='flexrow'>    
+            <button class='cfolder-submit' type="submit"><i class="fas fa-save"></i>Save</button>
+        </div> -->
+    </div>
+</div>
