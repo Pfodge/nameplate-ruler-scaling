@@ -229,6 +229,10 @@ class ScalerEditConfig extends HandlebarsApplicationMixin(ApplicationV2) {
             ]
         };
     }
+    _onChangeForm(formConfig, event) {
+        super._onChangeForm(formConfig, event);
+    }
+
     static async #onSubmit(_event, form, formData) {
         if (formData.object.localConfig) {
             let localStyle = {
